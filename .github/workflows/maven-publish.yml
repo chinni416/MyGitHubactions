@@ -25,6 +25,7 @@ jobs:
 
     - name: Build with Maven
       run: |
+           mvn clean install spring-boot:repackage
            mvn -B package --file pom.xml
            mkdir artifacts && cp target/*.jar artifacts
            cd artifacts && ls
